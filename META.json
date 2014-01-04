@@ -1,0 +1,81 @@
+{
+   "abstract" : "PDL::Finance::TA provides technical analysis functions for PDL",
+   "author" : [
+      "Vikas N. Kumar <vikas@cpan.org>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "Module::Build version 0.4203",
+   "keywords" : [
+      "finance",
+      "technical-analysis",
+      "technical",
+      "analysis"
+   ],
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "PDL-Finance-TA",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "examples"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "ExtUtils::CBuilder" : "0",
+            "File::Spec" : "0",
+            "Module::Build" : "0",
+            "Module::Build::PDL" : "0",
+            "Test::More" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0",
+            "Module::Build::PDL" : "0",
+            "Software::License" : "0"
+         }
+      },
+      "runtime" : {
+         "recommends" : {
+            "DateTime" : "0",
+            "Finance::QuoteHist" : "0",
+            "PDL::Graphics::PGPLOT" : "0"
+         },
+         "requires" : {
+            "File::ShareDir" : "1.00",
+            "PDL" : "2.006",
+            "perl" : "v5.10.0"
+         }
+      }
+   },
+   "provides" : {
+      "PDL::Finance::TA" : {
+         "file" : "lib/PDL/Finance/TA.pm",
+         "version" : "0.01"
+      },
+      "PDL::Finance::TA::Perl" : {
+         "file" : "lib/PDL/Finance/TA/Perl.pm",
+         "version" : "0.01"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/vikasnkumar/PDL-Finance-TA/issues"
+      },
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
+      "repository" : {
+         "url" : "https://github.com/vikasnkumar/PDL-Finance-TA"
+      }
+   },
+   "version" : "0.01"
+}

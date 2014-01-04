@@ -1,0 +1,50 @@
+---
+abstract: 'PDL::Finance::TA provides technical analysis functions for PDL'
+author:
+  - 'Vikas N. Kumar <vikas@cpan.org>'
+build_requires:
+  ExtUtils::CBuilder: 0
+  File::Spec: 0
+  Module::Build: 0
+  Module::Build::PDL: 0
+  Test::More: 0
+configure_requires:
+  Module::Build: 0
+  Module::Build::PDL: 0
+  Software::License: 0
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4203, CPAN::Meta::Converter version 2.132830'
+keywords:
+  - finance
+  - technical-analysis
+  - technical
+  - analysis
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: PDL-Finance-TA
+no_index:
+  directory:
+    - t
+    - examples
+provides:
+  PDL::Finance::TA:
+    file: lib/PDL/Finance/TA.pm
+    version: 0.01
+  PDL::Finance::TA::Perl:
+    file: lib/PDL/Finance/TA/Perl.pm
+    version: 0.01
+recommends:
+  DateTime: 0
+  Finance::QuoteHist: 0
+  PDL::Graphics::PGPLOT: 0
+requires:
+  File::ShareDir: 1.00
+  PDL: 2.006
+  perl: v5.10.0
+resources:
+  bugtracker: https://github.com/vikasnkumar/PDL-Finance-TA/issues
+  license: http://dev.perl.org/licenses/
+  repository: https://github.com/vikasnkumar/PDL-Finance-TA
+version: 0.01

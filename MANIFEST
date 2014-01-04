@@ -1,0 +1,13 @@
+Build.PL
+examples/benchmark.pl
+examples/movavg.pl
+lib/PDL/Finance/TA.pm
+lib/PDL/Finance/TA/Perl.pm
+lib/PDL/Finance/TA/TALib.pd
+LICENSE
+MANIFEST			This list of files
+META.json
+META.yml
+README.md
+t/00_use.t
+t/01_movavg.t
