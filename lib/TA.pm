@@ -4,7 +4,7 @@ use warnings;
 use 5.10.0;
 use feature 'say';
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 $VERSION = eval $VERSION;
 
 use PDL::Finance::TA::Mo;
@@ -675,7 +675,7 @@ research with Technical Analysis.
 
 =head1 VERSION
 
-0.02
+0.03
 
 =head1 METHODS
 
@@ -729,6 +729,25 @@ well. This is turned off by default since Gnuplot has more features.
 The default on Windows is C<$ENV{TMP}> or C<$ENV{TEMP}> and on Unix based
 systems is C<$ENV{TMPDIR}> if it is set or C</tmp> if none are set.
 The CSV files that are downloaded and temporary data is stored here.
+
+=back
+
+=head1 SEE ALSO
+
+=over
+
+=item L<PDL::Finance::Talib>
+
+This module will be used to add technical analysis to the charts.
+
+=item L<App::financeta>
+
+This module just runs the application that calls C<PDL::Finance::TA>.
+
+=item L<financeta>
+
+The commandline script that calls C<App::financeta>.
+
 
 =back
 

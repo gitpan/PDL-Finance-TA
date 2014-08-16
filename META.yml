@@ -28,10 +28,10 @@ no_index:
 provides:
   App::financeta:
     file: lib/App.pm
-    version: 0.02
+    version: 0.03
   PDL::Finance::TA:
     file: lib/TA.pm
-    version: 0.02
+    version: 0.03
   PDL::Finance::TA::Mo:
     file: lib/TA/Mo.pm
     version: 0
@@ -56,4 +56,4 @@ resources:
   bugtracker: https://github.com/vikasnkumar/PDL-Finance-TA/issues
   license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/vikasnkumar/PDL-Finance-TA
-version: 0.02
+version: 0.03

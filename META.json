@@ -64,11 +64,11 @@
    "provides" : {
       "App::financeta" : {
          "file" : "lib/App.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       },
       "PDL::Finance::TA" : {
          "file" : "lib/TA.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       },
       "PDL::Finance::TA::Mo" : {
          "file" : "lib/TA/Mo.pm",
@@ -87,5 +87,5 @@
          "url" : "https://github.com/vikasnkumar/PDL-Finance-TA"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }
