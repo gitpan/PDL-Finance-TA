@@ -1,25 +1,23 @@
 ---
-abstract: 'PDL::Finance::TA provides technical analysis functions for PDL'
+abstract: 'PDL::Finance::TA is a Technical Analysis GUI'
 author:
   - 'Vikas N. Kumar <vikas@cpan.org>'
 build_requires:
-  ExtUtils::CBuilder: 0
   File::Spec: 0
   Module::Build: 0
-  Module::Build::PDL: 0
   Test::More: 0
 configure_requires:
   Module::Build: 0
-  Module::Build::PDL: 0
+  Pod::Readme: 0
   Software::License: 0
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4203, CPAN::Meta::Converter version 2.132830'
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.120351'
 keywords:
   - finance
   - technical-analysis
   - technical
   - analysis
-license: perl
+license: open_source
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -27,24 +25,35 @@ name: PDL-Finance-TA
 no_index:
   directory:
     - t
-    - examples
 provides:
+  App::financeta:
+    file: lib/App.pm
+    version: 0.02
   PDL::Finance::TA:
-    file: lib/PDL/Finance/TA.pm
-    version: 0.01
-  PDL::Finance::TA::Perl:
-    file: lib/PDL/Finance/TA/Perl.pm
-    version: 0.01
+    file: lib/TA.pm
+    version: 0.02
+  PDL::Finance::TA::Mo:
+    file: lib/TA/Mo.pm
+    version: 0
 recommends:
-  DateTime: 0
-  Finance::QuoteHist: 0
   PDL::Graphics::PGPLOT: 0
+  PGPLOT: 0
 requires:
-  File::ShareDir: 1.00
-  PDL: 2.006
+  Capture::Tiny: 0
+  Carp: 0
+  Data::Dumper: 0
+  DateTime: 0
+  DateTime::Format::Strptime: 0
+  File::Spec: 0
+  Finance::QuoteHist: 1.2
+  PDL: 2.007
+  PDL::Finance::Talib: 0.006
+  PDL::Graphics::Gnuplot: 0
+  POE::Loop::Prima: 0
+  Prima: 1.39
   perl: v5.10.0
 resources:
   bugtracker: https://github.com/vikasnkumar/PDL-Finance-TA/issues
-  license: http://dev.perl.org/licenses/
+  license: http://www.gnu.org/licenses/gpl-3.0.txt
   repository: https://github.com/vikasnkumar/PDL-Finance-TA
-version: 0.01
+version: 0.02

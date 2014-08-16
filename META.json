@@ -1,10 +1,10 @@
 {
-   "abstract" : "PDL::Finance::TA provides technical analysis functions for PDL",
+   "abstract" : "PDL::Finance::TA is a Technical Analysis GUI",
    "author" : [
       "Vikas N. Kumar <vikas@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4203",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.120351",
    "keywords" : [
       "finance",
       "technical-analysis",
@@ -12,7 +12,7 @@
       "analysis"
    ],
    "license" : [
-      "perl_5"
+      "open_source"
    ],
    "meta-spec" : {
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
@@ -21,48 +21,58 @@
    "name" : "PDL-Finance-TA",
    "no_index" : {
       "directory" : [
-         "t",
-         "examples"
+         "t"
       ]
    },
    "prereqs" : {
       "build" : {
          "requires" : {
-            "ExtUtils::CBuilder" : "0",
             "File::Spec" : "0",
             "Module::Build" : "0",
-            "Module::Build::PDL" : "0",
             "Test::More" : "0"
          }
       },
       "configure" : {
          "requires" : {
             "Module::Build" : "0",
-            "Module::Build::PDL" : "0",
+            "Pod::Readme" : "0",
             "Software::License" : "0"
          }
       },
       "runtime" : {
          "recommends" : {
-            "DateTime" : "0",
-            "Finance::QuoteHist" : "0",
-            "PDL::Graphics::PGPLOT" : "0"
+            "PDL::Graphics::PGPLOT" : "0",
+            "PGPLOT" : "0"
          },
          "requires" : {
-            "File::ShareDir" : "1.00",
-            "PDL" : "2.006",
+            "Capture::Tiny" : "0",
+            "Carp" : "0",
+            "Data::Dumper" : "0",
+            "DateTime" : "0",
+            "DateTime::Format::Strptime" : "0",
+            "File::Spec" : "0",
+            "Finance::QuoteHist" : "1.2",
+            "PDL" : "2.007",
+            "PDL::Finance::Talib" : "0.006",
+            "PDL::Graphics::Gnuplot" : "0",
+            "POE::Loop::Prima" : "0",
+            "Prima" : "1.39",
             "perl" : "v5.10.0"
          }
       }
    },
    "provides" : {
-      "PDL::Finance::TA" : {
-         "file" : "lib/PDL/Finance/TA.pm",
-         "version" : "0.01"
+      "App::financeta" : {
+         "file" : "lib/App.pm",
+         "version" : "0.02"
       },
-      "PDL::Finance::TA::Perl" : {
-         "file" : "lib/PDL/Finance/TA/Perl.pm",
-         "version" : "0.01"
+      "PDL::Finance::TA" : {
+         "file" : "lib/TA.pm",
+         "version" : "0.02"
+      },
+      "PDL::Finance::TA::Mo" : {
+         "file" : "lib/TA/Mo.pm",
+         "version" : 0
       }
    },
    "release_status" : "stable",
@@ -71,11 +81,11 @@
          "web" : "https://github.com/vikasnkumar/PDL-Finance-TA/issues"
       },
       "license" : [
-         "http://dev.perl.org/licenses/"
+         "http://www.gnu.org/licenses/gpl-3.0.txt"
       ],
       "repository" : {
          "url" : "https://github.com/vikasnkumar/PDL-Finance-TA"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }

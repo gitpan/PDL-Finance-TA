@@ -1,62 +1,43 @@
 use strict;
 use warnings;
-use Module::Build::PDL;
+use Module::Build;
 
-sub check_alien_talib {
-    return undef if $^O =~ /MSWin32|Cygwin/i;
-    eval 'require Alien::TALib' || return undef;
-    return Alien::TALib->new;
-}
-my $alien = check_alien_talib();
-my %talib = (
-    extra_compiler_flags => $alien->cflags(),
-    extra_linker_flags => $alien->libs(),
-    auto_features => {
-        talib_support => {
-            description => "Use TALib instead of pure perl interface where applicable",
-            configure_requires => {
-                'Alien::TALib' => 0,
-            },
-            requires => {
-                'Alien::TALib' => 0,
-            },
-        },
-    },
-) if $alien;
-
-my $class = 'Module::Build::PDL';
-$class = 'Module::Build' unless $alien;
-
-my $build = $class->new(
+my $build = Module::Build->new(
     module_name => 'PDL::Finance::TA',
-    license => 'perl',
+    license => 'gpl3',
     dist_author => 'Vikas N. Kumar <vikas@cpan.org>',
-    dist_abstract => 'PDL::Finance::TA provides technical analysis functions for PDL',
-    create_readme => 0,
-    create_license => 1,
+    dist_abstract => 'PDL::Finance::TA is a Technical Analysis GUI',
+    dist_version_from => 'lib/TA.pm',
+    create_readme => 1,
+    create_license => (-e 'LICENSE' ? 0 : 1),
     configure_requires => {
         'Module::Build' => 0,
-        'Module::Build::PDL' => 0,
         'Software::License' => 0,
+        'Pod::Readme' => 0,
     },
     build_requires => {
         'Module::Build' => 0,
-        'Module::Build::PDL' => 0,
         'Test::More' => 0,
         'File::Spec' => 0,
     },
     requires => {
         'perl' => '5.10.0',
-        'PDL'  => '2.006',
+        'Carp' => 0,
+        'Data::Dumper' => 0,
+        'File::Spec' => 0,
+        'PDL'  => '2.007',
+        'DateTime' => 0,
+        'Finance::QuoteHist' => 1.20,
+        'PDL::Finance::Talib' => '0.006',
+        'Prima' => 1.39,
+        'DateTime::Format::Strptime' => 0,
+        'POE::Loop::Prima' => 0,
+        'PDL::Graphics::Gnuplot' => 0,
+        'Capture::Tiny' => 0,
     },
     recommends => {
-        'Finance::QuoteHist' => 0,
-        'DateTime' => 0,
         'PDL::Graphics::PGPLOT' => 0,
-    },
-    %talib,
-    share_dir => {
-        dist => [qw/examples/],
+        'PGPLOT' => 0,
     },
     dynamic_config => 1,
     add_to_cleanup => [ qw/*.bak _Inline/ ],
@@ -67,11 +48,20 @@ my $build = $class->new(
         },
         keywords => [qw/ finance technical-analysis technical analysis/],
         no_index => {
-            directory => [qw/ t examples /],
+            directory => [qw/ t /],
         },
     },
+    pm_files => {
+        'lib/TA.pm' => 'lib/PDL/Finance/TA.pm',
+        'lib/TA/Mo.pm' => 'lib/PDL/Finance/TA/Mo.pm',
+        'lib/App.pm' => 'lib/App/financeta.pm',
+    },
+    image_files => {
+        'images/icon.gif' => 'lib/PDL/Finance/TA/images/icon.gif',
+    }
 );
 
+$build->add_build_element('image');
 $build->create_build_script;
 $build->dispatch('distmeta');
 $build->dispatch('manifest');

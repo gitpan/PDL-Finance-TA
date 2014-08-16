@@ -1,13 +1,16 @@
+bin/financeta
 Build.PL
-examples/benchmark.pl
+Changes
 examples/movavg.pl
-lib/PDL/Finance/TA.pm
-lib/PDL/Finance/TA/Perl.pm
-lib/PDL/Finance/TA/TALib.pd
+images/icon.gif
+images/sm_perl_id_bk_wt.gif
+lib/App.pm
+lib/TA.pm
+lib/TA/Mo.pm
 LICENSE
 MANIFEST			This list of files
 META.json
 META.yml
+README
 README.md
 t/00_use.t
-t/01_movavg.t
